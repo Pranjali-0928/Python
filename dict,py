@@ -1,0 +1,186 @@
+# creating a dictionary 
+# d = {'name': 'git' , 'rollno' : 1 ,'rollno' : 2}
+# print(d)
+
+# d= dict(name = 'Sagar' , rollno = 2 )
+# print(d)
+
+
+# d= dict([('name','Deepak') ,( 'rollno' , 3 )])
+# print(d)
+
+# adding to a blank dictionary ## recommended 
+# d= {}
+# no_of_items = int(input("How many items you want to add"))
+# for i in range(0,no_of_items,1):
+#     key = input('kripaya key do')    
+#     value = input('kripaya value do')    
+#     d[key] = value
+#     print(d)
+
+# # adding to a blank dictionary ## recommended 
+# d= {}
+# keys = ['name','rollno']
+# values= ['Gaurav',1]
+
+# for i in range(0,len(keys)) :
+#     d[keys[i]] = values[i]
+
+# print(d)
+
+
+# SELECT/retrieve 
+d= {'employee_id': 100, 'address': ['pune', 'maharastra']}
+
+# print("The employee id is " , d['employee_id'])
+# print("The employee id is " , d['employee_id1']) #KeyError: 'employee_id1'
+
+ #print("""
+# #       get(key[, default])
+# #         Return the value for key if key is in the dictionary, else default.
+# #         If default is not given, it defaults to None, so that this method never raises a KeyError.
+# #       """)
+# print("The employee id is " , d.get('employee_id'))
+# print("The employee id is " , d.get('employee_id1'))
+# print(d.get("employee_id1","Default_value"))
+
+# print(d.keys())
+# print(d.values())
+
+#print(d.values()) 
+# for value in d.values():
+#  print(f'value is {value}') 
+#  print(d.items())
+ 
+# for key,value in d.items():
+#  print(f"key is {key} value is {value}")
+# 
+# 
+# 
+# # # ADD
+# # single element  
+# 
+#d['country']     = "India"
+#print(d)
+
+
+
+# d|= {"new_key":1,"new_key1":2}
+# print(d)
+
+
+
+# d['employee_id']     = 99999999
+# print(d)
+
+# # if they key  is not present it adds so technically its a merge
+# d['employee_id1']     = 888888888
+# print(d)
+
+
+# # update single / multiple keys (merge) 
+# d.update({'employee_id': 6666666666666,'address': "new_address"})
+# print(d)
+
+# # multiple elements ( merge operations though so just pass keys that are there in first dictionary)
+# print(d)
+# d|= {'employee_id': 6666666666666,'address': "new_address"}
+# print(d)
+
+# # delete 
+#print("del d[key] -- Remove d[key] from d. Raises a KeyError if key is not in the map.")
+# del d['employee_id']
+# print(d)
+# del d["name1"] # KeyError: 'name1'
+
+# print("""
+#       pop(key[, default])
+#         If key is in the dictionary, remove it and return its value, else return default. 
+#         If default is not given and key is not in the dictionary, a KeyError is raised.
+#       """)
+
+# my_dict = {"name": "hpcsa", "rollno": 1 , "city": "Pune","Subjects" : ["DBDA","DIOT","DAC","HPCSA"]}
+# #print(my_dict)
+# print(my_dict.pop("rollno"))
+#a=my_dict.pop("name")
+#print(a)
+#print(my_dict)
+#print(my_dict.pop("name1")) # KeyError: 'name1'
+#print(my_dict.pop("name1","defaulted"))
+
+
+#print("""
+#       popitem()
+#         Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO order.
+#       """)
+#print(my_dict.popitem())
+my_dict = {
+           "name": "gaurav",
+           "rollno": 1 ,
+           "city": "Pune",
+           "Subjects" : ["DBDA","DIOT","DAC","HPCSA"]
+          }
+#print(list(my_dict))
+
+# print(len(my_dict))
+
+# print("key in d -- Return True if d has a key key, else False.")
+# print("name" in my_dict)
+# print("name1" in my_dict)
+
+# print("key not in d -- Equivalent to not key in d.")
+# print("name" not in my_dict)
+# print("name1" not in my_dict)
+
+# print("clear() -- Remove all items from the dictionary")
+# print(my_dict)
+# my_dict.clear()
+# print(my_dict)
+
+# print("copy() --Return a shallow copy of the dictionary.")
+# my_copy_dict = my_dict.copy()
+# print(my_dict)
+# print(my_copy_dict)
+
+# print("""
+#       reversed(d)
+#       Return a reverse iterator over the keys of the dictionary. This is a shortcut for reversed(d.keys()).
+#       """)
+
+# print(my_dict)
+# #print(list(reversed(my_dict)))
+# #print(list(reversed(my_dict.keys())))
+# #print(list(reversed(my_dict.values())))
+# print(dict(reversed(my_dict.items())))
+
+# print("fromkeys(iterable[, value]) --Create a new dictionary with keys from iterable and values set to value.")
+# population_density_statewise = dict.fromkeys(["MH","Punjab","Karnataka"],111110)
+# print(population_density_statewise)
+
+
+# print("""
+#       d | other
+#         Create a new dictionary with the merged keys and values of d and other, 
+#         which must both be dictionaries. 
+#         The values of other take priority when d and other share keys.
+# #       """)
+# my_dict = {"name":"gaurav" ,"address" : "Pune"}
+# my_new_dict = {"name": "New name","rollno" : 1}
+# print(my_dict)
+# print(my_new_dict)
+# print(my_dict|my_new_dict)
+# print(my_dict)
+
+# print("""
+#       setdefault(key[, default])
+#         If key is in the dictionary, return its value. 
+#         If not, insert key with a value of default and return default. 
+#         default defaults to None.
+#       """) 
+  
+#print(my_dict)   
+print(my_dict.setdefault("name1","defaulted_value"))
+# print(my_dict)   
+print(my_dict.setdefault("name1")) # defaulted_value
+print(my_dict.setdefault("name2")) # None
+print(my_dict)   
